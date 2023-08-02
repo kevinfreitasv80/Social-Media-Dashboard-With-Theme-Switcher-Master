@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root{
+    --colorTextDark: white;
+    --bgCardDark: hsl(228, 28%, 20%);
+    --colorTextUp: hsl(163, 72%, 41%);
+    --colorTextDown: hsl(356, 69%, 56%);
+    --colorTextDark2: hsl(228, 34%, 66%);
+    --bgBodyDark: linear-gradient(hsl(232, 19%, 15%), hsl(230, 17%, 14%));
+    --bgSwitchDark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--bgBodyDark);
+    background-repeat: no-repeat;
+    background-size: 100% 1000vh;
+    font-family: "Inter", sans-serif;
+}
+main{
+    position: absolute;
+    left: 50%;
+    top: 2.5em;
+    transform: translateX(-50%);
+    width: 1090px;
+    color: var(--colorTextDark);
+}
+.topDashboard, .sectionCardsTop, .sectionCardsTop article nav, .chooseThemeNav{
+    display: flex;
+    align-items: center;
+}
+.topDashboard{
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+.cardsTop{
+    position: relative;
+    width: 250px;
+    height: 209px;
+    text-align: center;
+    border-radius: 0 0 .5em .5em;
+}
+.cardsTop:hover, .cardsBottom:hover{
+    transition: .4s;
+    background: #333A56;
+}
+.topDashboard p, .topDashboard h2{
+    margin: 0;
+}
+.topDashboard p{
+    font-weight: 700;
+    font-size: .9em;
+}
+.topDashboard nav p{
+    margin-top: .3em;
+}
+.topDashboard p{
+    font-weight: 700;
+    font-size: .9em;
+}
+.topDashboard h2{
+    letter-spacing: 1px;
+}
+input{
+    display: none;
+}
+.sectionCardsTop{
+    justify-content: space-between;
+}
+.cardsTop{
+    background: var(--bgCardDark);
+}
+.sectionCardsTop article nav{
+    justify-content: center;
+}
+.sectionCardsTop h1{
+    font-size: 45px;
+    margin: 0;
+}
+.sectionCardsTop article nav:first-of-type{
+    margin-top: 1.5em;
+}
+.sectionCardsTop article nav:first-of-type p{
+    font-weight: 700;
+    font-size: .7em;
+}
+main section:first-child nav:first-child{
+    margin-bottom: .7em;
+}
+main section:first-child article:has(h1){
+    margin: .7em 0 1em 0;
+}
+main section:first-child article>h1{
+    font-size: 50px;
+}
+.sectionCardsTop article nav:first-child{
+    margin-top: 1em;
+}
+.sectionCardsTop article article p{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: .7em;
+}
+.sectionCardsTop nav:first-of-type p{
+    margin-left: .7em;
+}
+.sectionCardsTop nav:last-of-type p{
+    margin-left: .3em;
+}
+.sectionCardsBottom nav:last-of-type p{
+    margin: 0 0 0 .5em;
+}
+.switch{
+    margin-left: .7em;
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: var(--bgSwitchDark);
+    border-radius: 20px;
+    transition: .7s;
+}
+.switch span{
+    margin: .2em 0 0 .15em;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #252B46;
+    transition: .5s;
+}
+.switch:hover span{
+    background: #2F3C56;
+}
+#chooseTheme:checked+.switch span{
+    margin-left: 1.7em;
+    background: var(--colorTextDark);
+}
+#chooseTheme:checked+.switch{
+    background: #AEB2CB;
+}
+body:has(#chooseTheme:checked){
+    background: var(--colorTextDark);
+}
+body:has(#chooseTheme:checked) .cardsTop, body:has(#chooseTheme:checked) .cardsBottom{
+    background: #F0F3FA;
+}
+main:has(#chooseTheme:checked){
+    color: black;
+}
+main:has(#chooseTheme:checked) section:last-child>h1, main:has(#chooseTheme:checked) .cardsBottom article:first-child p, .main:has(#chooseTheme:checked) .cardsTop nav:first-of-type p{
+    color: #676B80;
+    font-weight: 700;
+}
+main:has(#chooseTheme:checked) .cardsBottom:hover, main:has(#chooseTheme:checked) .cardsTop:hover{
+    background: #E1E3F0;
+}
+main:has(#chooseTheme:checked) .switch:hover{
+    background: var(--bgSwitchDark);
+}
+
+.sectionCardsBottom{
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(2, 125px);
+    gap: 30px;
+    justify-content: space-between;
+}
+.cardsBottom{
+    display: grid;
+    width: 200px;
+    height: 76px;
+    padding: 25px;
+    background: var(--bgCardDark);
+    border-radius: .3em;
+}
+.cardsBottom>article, .sectionCardsBottom nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cardsBottom article:first-child p{
+    margin: 0;
+}
+.sectionCardsBottom nav p{
+    margin-left: .5em;
+}
+.cardsBottom>article{
+    margin-bottom: 1.2em;
+}
+.sectionCardsBottom h1{
+    font-size: 35px;
+    margin: 0;
+}
+p:not(nav .icons+p){
+    color: var(--colorTextDark2);
+}
+main section img[src$="up.svg"]+p, main section img[src$="down.svg"]+p{
+    font-size: .7em;
+    font-weight: 700;
+}
+main section img[src$="down.svg"]+p{
+    color: var(--colorTextDown);
+}
+main section img[src$="up.svg"]+p{
+    color: var(--colorTextUp);
+}
+.cardsTop span[class^="span"]{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 1em 1em 0 0;
+}
+span[class$="ce"]{
+    background: hsl(208, 92%, 53%);
+}
+span[class$="wi"]{
+    background: hsl(203, 89%, 53%);
+}
+span[class$="ta"]{
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+span[class$="ou"]{
+    background: hsl(348, 97%, 39%);
+}
+hr{
+    border: none;
+    background: #373A4D;
+    height: 1.5px;
+    width: 100%;
+    display: none;
+}
+@media (max-width: 1130px) {
+    main{
+        width: 90%;
+    }
+    main section:last-child>h1{
+        text-align: center;
+    }
+    .sectionCardsTop, .sectionCardsBottom{
+        display: grid;
+        justify-content: center;
+    }
+    .sectionCardsTop{
+        grid-template-columns: repeat(2, 250px);
+        column-gap: 30px;
+    }
+    .sectionCardsBottom{
+        grid-template-columns: repeat(3, 250px);
+        grid-template-rows: repeat(3, 126px);
+        margin-bottom: 2em;
+    }
+}
+@media (max-width: 850px) {
+    .sectionCardsBottom{
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: repeat(4, 126px);
+    }
+}
+@media (max-width: 580px) {
+    main section:last-child>h1{
+        margin-top: 2em;
+    }
+    .sectionCardsBottom, .sectionCardsTop{
+        grid-template-columns: repeat(1, 250px);
+    }
+    .sectionCardsBottom{
+        grid-template-rows: repeat(8, 126px);
+    }
+    .sectionCardsTop{
+        grid-template-rows: repeat(4, 209px);
+        row-gap: 30px;
+    }
+    hr{
+        display: block;
+    }
+    .topDashboard{
+        width: 100%;
+        display: inline-block;
+    }
+    .chooseThemeNav{
+        justify-content: space-between;
+    }
+}
