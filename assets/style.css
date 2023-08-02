@@ -109,6 +109,9 @@ main section:first-child article>h1{
 .sectionCardsTop nav:last-of-type p{
     margin-left: .3em;
 }
+.cardsTop:hover, .cardsBottom:hover{
+    cursor: pointer;
+}
 .sectionCardsBottom nav:last-of-type p{
     margin: 0 0 0 .5em;
 }
